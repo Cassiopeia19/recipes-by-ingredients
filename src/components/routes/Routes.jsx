@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "../../containers/header/Header";
-import Footer from "../../containers/Footer.jsx";
+import Footer from "../../containers/footer/Footer";
 import Home from "../../ui/home/Home";
 import PrivacyPolicy from '../../components/privacyPolicy/PrivacyPolicy'
 
