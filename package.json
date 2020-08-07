@@ -11,13 +11,12 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",
-    "react-google-login": "^5.0.5",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

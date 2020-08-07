@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
-import firebase from "firebase"
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+//https://www.youtube.com/watch?v=zq0TuNqV0Ew
+
+import React, { Component } from "react";
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 firebase.initializeApp({
   apiKey: "AIzaSyA1G6xtp86A54REESV33I8tfx9I5nZ638A",
@@ -52,4 +54,4 @@ class Login extends Component {
     );
   }
 }
-export default Login
+export default Login;

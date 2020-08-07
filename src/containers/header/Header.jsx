@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 //import ReloadPage from "../../components/ReloadPage.js";
 import "./Header.css";
+import Login from '../../components/ui/login/Login'
+import logo from '../../assets/images/recipe.png'
 
 class Header extends Component {
   render() {
-
+    const isUserLoggedIn = Login.isSignedIn;
     return (
       <header className="header">
         <nav
@@ -15,9 +17,58 @@ class Header extends Component {
           style={{ fontSize: "24px" }}
         >
           <div>
-            <Link className="navbar-brand" to="/home"></Link>
-            <Link className="navbar-brand" to="/favorites"></Link>
+            {isUserLoggedIn && (
+              <div>
+                <Link className="navbar-brand" to="/home">
+                  <img src={logo} alt="recipe logo" />
+                </Link>
+              </div>
+            )}
           </div>
+          <ul className="navbar-nav">
+            {isUserLoggedIn && (
+              <li>
+                <Link className="nav-link" to="/favorites">
+                  Favorites
+                </Link>
+              </li>
+            )}
+            {isUserLoggedIn && (
+              <li>
+                <Link className="nav-link" to="/privacy-policy">
+                  Privacy Policy
+                </Link>
+              </li>
+            )}
+          </ul>
+          {/* <ul className="navbar-nav navbar-collapse justify-content-end"> */}
+            {/* {!isUserLoggedIn && (
+              <li>
+                <Link
+                  className="nav-link"
+                  to="/login"
+                  onClick={withRouter && ReloadPage.refresh}
+                >
+                  Login
+                </Link>
+              </li>
+            )} */}
+            {/* {isUserLoggedIn && (
+              <li>
+                <Link
+                  className="nav-link"
+                  to="/logout"
+                  onClick={
+                    withRouter &&
+                    ReloadPage.refresh &&
+                    AuthenticationService.logout
+                  }
+                >
+                  Logout
+                </Link>
+              </li>
+            )} */}
+          {/* </ul> */}
         </nav>
       </header>
     );
