@@ -5,7 +5,7 @@ export default class PrivacyPolicy extends Component {
         return (
           <div>
             <h1>Privacy Policy</h1>
-            <h3>
+            <p>
               Protecting your private information is our
               priority. This Statement of Privacy applies to
               https://recipes-by-ingredients.herokuapp.com/ and jennieCreation
@@ -95,7 +95,7 @@ export default class PrivacyPolicy extends Component {
               available through this Site after such modifications will
               constitute your: (a) acknowledgment of the modified Privacy
               Policy; and (b) agreement to abide and be bound by that Policy. 
-            </h3>
+            </p>
           </div>
         );
     }
