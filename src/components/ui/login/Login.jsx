@@ -5,11 +5,6 @@ import { withRouter, Redirect } from "react-router";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
-// firebase.initializeApp({
-//   apiKey: "AIzaSyA1G6xtp86A54REESV33I8tfx9I5nZ638A",
-//   authDomain: "recipes-by-ingredients-285703.firebaseapp.com",
-// });
-
 class Login extends Component {
   state = { isSignedIn: false };
   uiConfig = {

@@ -8,6 +8,7 @@ import Recipes from "./components/ui/pages/recipes/Recipes"
 import Favorites from "./components/ui/pages/favorites/Favorites"
 import PrivacyPolicy from "./components/ui/pages/privacyPolicy/PrivacyPolicy"
 import Login from "./components/ui/login/Login";
+import Logout from './components/ui/logout/Logout'
 import { AuthProvider } from "./Auth";
 import PrivateRoute from "./PrivateRoute";
 import Header from "./containers/header/Header"

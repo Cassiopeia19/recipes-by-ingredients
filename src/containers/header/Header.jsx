@@ -6,6 +6,7 @@ import { withRouter } from "react-router";
 import "./Header.css";
 //import Login from '../../components/ui/login/Login'
 import logo from '../../assets/images/recipes.png'
+import firebase from 'firebase'
 
 class Header extends Component {
   render() {
@@ -26,17 +27,20 @@ class Header extends Component {
             <li>
               <Link to="/home">Home</Link>
             </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
               <Link to="/recipes">Recipes</Link>
             </li>
             <li>
               <Link to="/favorites">Favorites</Link>
             </li>
             <li>
-              <Link to="/privacy-policy">Privacy</Link>
+              <Link to="/privacy-policy">PrivacyPolicy</Link>
+            </li>
+            <li style={{ float: "right" }}>
+              <Link onClick={() => firebase.auth().signOut()}>Logout</Link>
             </li>
           </ul>
           <ul>
