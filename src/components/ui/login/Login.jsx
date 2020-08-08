@@ -40,11 +40,6 @@ class Login extends Component {
             <div>Signed In!</div>
             <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
             <Redirect to="/" />
-            {/* <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
-            <img
-              src={firebase.auth().currentUser.photoURL}
-              alt="profile picture"
-            /> */}
           </span>
         ) : (
           <StyledFirebaseAuth

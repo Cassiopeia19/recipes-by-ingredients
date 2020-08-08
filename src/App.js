@@ -3,6 +3,7 @@ import "./App.css";
 //import "./bootstrap.css";
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import Home from "./components/ui/home/Home";
+import Recipes from "./components/ui/recipes/Recipes"
 import Favorites from "./components/ui/favorites/Favorites"
 import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy"
 import Login from "./components/ui/login/Login";
@@ -21,6 +22,7 @@ const App = () => {
             <Switch>
               <PrivateRoute exact path="/" component={Home} />
               <PrivateRoute exact path="/home" component={Home} />
+              <PrivateRoute exact path="/recipes" component={Recipes} />
               <PrivateRoute exact path="/favorites" component={Favorites} />
               <PrivateRoute
                 exact

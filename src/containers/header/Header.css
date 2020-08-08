@@ -9,11 +9,7 @@ header {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
-}
-
-.header ul:hover {
- color:yellowgreen;
+  background-color: transparent;
 }
 
 .header li {
@@ -21,12 +17,12 @@ header {
   height: 55px;
   width: 115px;
   position: relative;
-  padding: 1rem;
+  padding: 1rem 1rem;
 }
 
 .header li a {
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;

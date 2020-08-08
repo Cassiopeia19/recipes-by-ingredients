@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 //import ReloadPage from "../../components/routes/ReloadPage";
 import "./Header.css";
-import Login from '../../components/ui/login/Login'
+//import Login from '../../components/ui/login/Login'
 import logo from '../../assets/images/recipes.png'
 
 class Header extends Component {
@@ -15,41 +15,42 @@ class Header extends Component {
         <nav style={{ fontSize: "24px" }}>
           <div>
             {/* {isUserLoggedIn && ( */}
-              <div>
-                <Link to="/home">
-                  <img src={logo} alt="recipe logo" />
-                </Link>
-              </div>
-            {/* )} */}
+            <div>
+              <Link to="/home">
+                <img src={logo} alt="recipe logo" />
+              </Link>
+            </div>
+            {/* )}  */}
           </div>
           <ul>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
             {/* {isUserLoggedIn && ( */}
-              <li>
-                <Link to="/favorites">
-                  Favorites
-                </Link>
-              </li>
-            {/* )} */}
-            {/* {isUserLoggedIn && ( */}
-              <li>
-                <Link to="/privacy-policy">
-                  Privacy
-                </Link>
-              </li>
-            {/* )} */}
+            <li>
+              <Link to="/recipes">Recipes</Link>
+            </li>
+            <li>
+              <Link to="/favorites">Favorites</Link>
+            </li>
+            {/* )} 
+            {isUserLoggedIn && ( */}
+            <li>
+              <Link to="/privacy-policy">Privacy</Link>
+            </li>
+            {/* )}  */}
           </ul>
           <ul>
-            {/* {!isUserLoggedIn && ( */}
-              {/* <li>
+            {/* {!isUserLoggedIn &&  */}
+            {/* <li>
                 <Link
                   to="/login"
                   onClick={withRouter }
                 >
                   Login
                 </Link>
-              </li>
-            )} */}
-            
+              </li>   */}
+            {/* }          */}
           </ul>
         </nav>
       </header>

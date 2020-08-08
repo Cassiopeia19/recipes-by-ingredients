@@ -10,14 +10,6 @@ const Footer = () => {
               <div className="column">
                 All Rights Reserved &copy; 2020 Recipes By Ingredients
               </div>
-              <div className="column has-text-right">
-                <a className="icon" href="#">
-                  <i className="fa fa-facebook"></i>
-                </a>
-                <a className="icon" href="#">
-                  <i className="fa fa-twitter"></i>
-                </a>
-              </div>
             </div>
           </div>
         </footer>
