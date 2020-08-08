@@ -2,10 +2,11 @@ import React from "react";
 import "./App.css";
 //import "./bootstrap.css";
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
-import Home from "./components/ui/home/Home";
-import Recipes from "./components/ui/recipes/Recipes"
-import Favorites from "./components/ui/favorites/Favorites"
-import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy"
+import Home from "./components/ui/pages/home/Home";
+import About from "./components/ui/pages/about/About";
+import Recipes from "./components/ui/pages/recipes/Recipes"
+import Favorites from "./components/ui/pages/favorites/Favorites"
+import PrivacyPolicy from "./components/ui/pages/privacyPolicy/PrivacyPolicy"
 import Login from "./components/ui/login/Login";
 import { AuthProvider } from "./Auth";
 import PrivateRoute from "./PrivateRoute";
@@ -22,6 +23,7 @@ const App = () => {
             <Switch>
               <PrivateRoute exact path="/" component={Home} />
               <PrivateRoute exact path="/home" component={Home} />
+              <PrivateRoute exact path="/about" component={About} />
               <PrivateRoute exact path="/recipes" component={Recipes} />
               <PrivateRoute exact path="/favorites" component={Favorites} />
               <PrivateRoute

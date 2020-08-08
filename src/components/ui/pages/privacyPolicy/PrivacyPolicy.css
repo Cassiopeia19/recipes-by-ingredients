@@ -1,0 +1,20 @@
+PrivacyPolicy {
+    display: block;
+    width: 90%;
+    background:#fff;
+    margin: 0 auto;
+    /* margin-bottom: 0; */
+    box-shadow: 2px 0 4px 1px rgba(0, 0, 0, 0.03);
+}
+.PrivacyPolicy p {
+    padding: 10px 50px;  
+    margin: 0px 50px;   
+    min-height: calc(100vh - 120px);
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px; 
+}

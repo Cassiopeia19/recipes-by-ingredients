@@ -26,19 +26,18 @@ class Header extends Component {
             <li>
               <Link to="/home">Home</Link>
             </li>
-            {/* {isUserLoggedIn && ( */}
-            <li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
               <Link to="/recipes">Recipes</Link>
             </li>
             <li>
               <Link to="/favorites">Favorites</Link>
             </li>
-            {/* )} 
-            {isUserLoggedIn && ( */}
             <li>
               <Link to="/privacy-policy">Privacy</Link>
             </li>
-            {/* )}  */}
           </ul>
           <ul>
             {/* {!isUserLoggedIn &&  */}
