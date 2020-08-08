@@ -1,13 +1,14 @@
 //https://www.youtube.com/watch?v=zq0TuNqV0Ew
 
 import React, { Component } from "react";
+import { withRouter, Redirect } from "react-router";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
-firebase.initializeApp({
-  apiKey: "AIzaSyA1G6xtp86A54REESV33I8tfx9I5nZ638A",
-  authDomain: "recipes-by-ingredients-285703.firebaseapp.com",
-});
+// firebase.initializeApp({
+//   apiKey: "AIzaSyA1G6xtp86A54REESV33I8tfx9I5nZ638A",
+//   authDomain: "recipes-by-ingredients-285703.firebaseapp.com",
+// });
 
 class Login extends Component {
   state = { isSignedIn: false };
@@ -38,11 +39,12 @@ class Login extends Component {
           <span>
             <div>Signed In!</div>
             <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-            <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
+            <Redirect to="/" />
+            {/* <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
             <img
               src={firebase.auth().currentUser.photoURL}
               alt="profile picture"
-            />
+            /> */}
           </span>
         ) : (
           <StyledFirebaseAuth
@@ -54,4 +56,5 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+
+export default withRouter(Login);

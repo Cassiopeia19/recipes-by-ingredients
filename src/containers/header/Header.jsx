@@ -2,10 +2,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
-//import ReloadPage from "../../components/ReloadPage.js";
+import ReloadPage from "../../components/routes/ReloadPage";
 import "./Header.css";
 import Login from '../../components/ui/login/Login'
 import logo from '../../assets/images/recipe.png'
+import AuthenticationService from '../../components/authentication/AuthenticationService'
 
 class Header extends Component {
   render() {
@@ -41,8 +42,8 @@ class Header extends Component {
               </li>
             )}
           </ul>
-          {/* <ul className="navbar-nav navbar-collapse justify-content-end"> */}
-            {/* {!isUserLoggedIn && (
+          <ul className="navbar-nav navbar-collapse justify-content-end">
+            {!isUserLoggedIn && (
               <li>
                 <Link
                   className="nav-link"
@@ -52,8 +53,8 @@ class Header extends Component {
                   Login
                 </Link>
               </li>
-            )} */}
-            {/* {isUserLoggedIn && (
+            )}
+            {isUserLoggedIn && (
               <li>
                 <Link
                   className="nav-link"
@@ -67,8 +68,8 @@ class Header extends Component {
                   Logout
                 </Link>
               </li>
-            )} */}
-          {/* </ul> */}
+            )}
+          </ul>
         </nav>
       </header>
     );
