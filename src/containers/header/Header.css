@@ -1,4 +1,54 @@
-.sticky-nav {
-  position: sticky;
-  top: 0;
+header {
+  padding:1rem 0;
+  text-align: center;
+  margin-top:0;
 }
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.header ul:hover {
+ color:yellowgreen;
+}
+
+.header li {
+  float: left;
+  height: 55px;
+  width: 115px;
+  position: relative;
+  padding: 1rem;
+}
+
+.header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.header li a:hover {
+ color: #61c985;
+}
+
+.header .logo {
+        display: block;
+        float: left;
+        padding: 4px 3px;
+    }
+
+.header img {
+    position: inherit;
+    top:10px; 
+    left:10px;
+    width:60px;
+    height:60px;
+    overflow:hidden;
+    padding: 1rem;
+    float: left;
+    }

@@ -1,0 +1,15 @@
+footer {
+    margin:0;
+    padding: 0;
+    background:#61c985;
+    color:#fff;
+    padding:1rem 0;
+    text-align: center;
+    margin-top:0;
+    flex-shrink: 0;
+    position:absolute;
+    width:100%;
+    bottom:0px;
+}
+
+ 
