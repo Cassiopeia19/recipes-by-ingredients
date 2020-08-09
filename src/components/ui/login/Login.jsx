@@ -1,5 +1,3 @@
-//https://www.youtube.com/watch?v=zq0TuNqV0Ew
-
 import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router";
 import firebase from "firebase";

@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-//import "./bootstrap.css";
 import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import Home from "./components/ui/pages/home/Home";
 import About from "./components/ui/pages/about/About";
@@ -8,18 +7,17 @@ import Recipes from "./components/ui/pages/recipes/Recipes"
 import Favorites from "./components/ui/pages/favorites/Favorites"
 import PrivacyPolicy from "./components/ui/pages/privacyPolicy/PrivacyPolicy"
 import Login from "./components/ui/login/Login";
-import Logout from './components/ui/logout/Logout'
 import { AuthProvider } from "./Auth";
 import PrivateRoute from "./PrivateRoute";
-import Header from "./containers/header/Header"
-import Footer from "./containers/footer/Footer"
+import Header from "./containers/header/Header";
+import Footer from "./containers/footer/Footer";
 
 const App = () => {
   return (
-    <div className="App">
-      <AuthProvider>
-        <Router>
-          <>
+    <>
+      <div className="App">
+        <AuthProvider>
+          <Router>
             <Header />
             <Switch>
               <PrivateRoute exact path="/" component={Home} />
@@ -34,11 +32,11 @@ const App = () => {
               />
               <Route exact path="/login" component={Login} />
             </Switch>
-            <Footer />
-          </>
-        </Router>
-      </AuthProvider>
-    </div>
+          </Router>
+        </AuthProvider>
+      </div>
+      <Footer />
+    </>
   );
 };
 

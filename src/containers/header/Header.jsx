@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Component } from "react";
+//import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 //import ReloadPage from "../../components/routes/ReloadPage";
@@ -23,7 +24,12 @@ class Header extends Component {
             </div>
             {/* )}  */}
           </div>
-          <ul>
+          <ul activeStyle={{ color: "red" }}>
+            <li>
+              <Link to="/login" onClick={withRouter}>
+                Login
+              </Link>
+            </li>
             <li>
               <Link to="/home">Home</Link>
             </li>
@@ -37,23 +43,13 @@ class Header extends Component {
               <Link to="/favorites">Favorites</Link>
             </li>
             <li>
-              <Link to="/privacy-policy">PrivacyPolicy</Link>
+              <Link to="/privacy-policy">
+                PrivacyPolicy
+              </Link>
             </li>
             <li style={{ float: "right" }}>
               <Link onClick={() => firebase.auth().signOut()}>Logout</Link>
             </li>
-          </ul>
-          <ul>
-            {/* {!isUserLoggedIn &&  */}
-            {/* <li>
-                <Link
-                  to="/login"
-                  onClick={withRouter }
-                >
-                  Login
-                </Link>
-              </li>   */}
-            {/* }          */}
           </ul>
         </nav>
       </header>

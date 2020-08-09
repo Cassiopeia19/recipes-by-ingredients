@@ -5,16 +5,22 @@ PrivacyPolicy {
     margin: 0 auto;
     /* margin-bottom: 0; */
     box-shadow: 2px 0 4px 1px rgba(0, 0, 0, 0.03);
-}
-.PrivacyPolicy p {
-    padding: 10px 50px;  
-    margin: 0px 50px;   
+    box-sizing: border-box;
     min-height: calc(100vh - 120px);
 }
+.PrivacyPolicy p {
+    padding: 10px 10px;  
+    margin: 10px 20px; 
+    /* min-height: calc(100vh - 120px); */
+}
 
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -142px; 
+.columns {
+	/* font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 100%; */
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
 }
