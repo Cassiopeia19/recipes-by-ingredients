@@ -4,7 +4,7 @@ import './Footer.css'
 const Footer = () => {
     return (
       <div className="wrapper">
-        <footer class="footer">
+        <footer className="footer">
           <div className="container">
             <div className="columns">
               <div className="column">
