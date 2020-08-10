@@ -29,20 +29,27 @@ class Login extends Component {
   };
   render() {
     return (
-      <div className="login-background" style={{backgroundImage: `url(${meal})`}}>
-        {this.state.isSignedIn ? (
-          <span>
-            <div>Signed In!</div>
-            <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
-            <Redirect to="/" />
-          </span>
-        ) : (
-          <StyledFirebaseAuth
-            uiConfig={this.uiConfig}
-            firebaseAuth={firebase.auth()}
-          />
-        )}
-      </div>
+      <body
+        className="login-background"
+        style={{ backgroundImage: `url(${meal})` }}
+      >
+        <div>
+          {this.state.isSignedIn ? (
+            <span>
+              <div>Signed In!</div>
+              <button onClick={() => firebase.auth().signOut()}>
+                Sign out!
+              </button>
+              <Redirect to="/" />
+            </span>
+          ) : (
+            <StyledFirebaseAuth
+              uiConfig={this.uiConfig}
+              firebaseAuth={firebase.auth()}
+            />
+          )}
+        </div>
+      </body>
     );
   }
 }
