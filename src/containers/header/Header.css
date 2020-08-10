@@ -28,6 +28,11 @@ header {
   text-decoration: none;
 }
 
+.header li:active {
+  color: black;
+  background-color: #61c985;
+}
+
 .header li a:hover {
  color: #61c985;
 }
