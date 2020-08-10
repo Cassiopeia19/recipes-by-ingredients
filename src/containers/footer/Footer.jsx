@@ -8,10 +8,8 @@ const Footer = () => {
           <div className="container">
             <div className="columns">
               <div className="column">
-                <center>
                   All Rights Reserved &copy; 2020 Recipes by Ingredients, a
                   jennieCreation
-                </center>
               </div>
             </div>
           </div>

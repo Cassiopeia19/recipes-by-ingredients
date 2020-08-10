@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter, Redirect } from "react-router";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import './Login.css'
 
 class Login extends Component {
   state = { isSignedIn: false };
@@ -27,7 +28,7 @@ class Login extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="login-background">
         {this.state.isSignedIn ? (
           <span>
             <div>Signed In!</div>
