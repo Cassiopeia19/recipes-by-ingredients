@@ -10,7 +10,7 @@ import firebase from 'firebase'
 
 class Header extends Component {
   render() {
-    const isUserLoggedIn = Auth.AuthContext.Provider;
+    const isUserLoggedIn = Auth.AuthContext;
     return (
       <header className="header">
         <nav style={{ fontSize: "24px" }}>
