@@ -32,13 +32,6 @@ header {
  color: #61c985;
 }
 
-.header li a:active {
-  background-color: green;
-  width: 30px;
-  color:white;
-  font-weight: bold;
-}
-
 .header .logo {
         display: block;
         float: left;

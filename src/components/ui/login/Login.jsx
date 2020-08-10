@@ -29,7 +29,7 @@ class Login extends Component {
   };
   render() {
     return (
-      <div className="login-background" style={{backgroundImage: {meal}}}>
+      <div className="login-background" style={{backgroundImage: `url(${meal})`}}>
         {this.state.isSignedIn ? (
           <span>
             <div>Signed In!</div>
