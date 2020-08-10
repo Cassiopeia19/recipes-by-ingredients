@@ -20,10 +20,6 @@ header {
   padding: 1rem 1rem;
 }
 
-.header li:active {
-  color: green;
-}
-
 .header li a {
   display: block;
   color: black;
@@ -32,9 +28,8 @@ header {
   text-decoration: none;
 }
 
-.header li:active {
-  color: black;
-  background-color: #61c985;
+.header li a.active-page {
+  background-color: green;
 }
 
 .header li a:hover {
