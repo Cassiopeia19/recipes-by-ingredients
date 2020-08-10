@@ -12,6 +12,10 @@ header {
   background-color: transparent;
 }
 
+.header ul .active {
+  background-color: green;
+}
+
 .header li {
   float: left;
   height: 55px;
@@ -26,10 +30,6 @@ header {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-.header li a.active-page {
-  background-color: green;
 }
 
 .header li a:hover {
