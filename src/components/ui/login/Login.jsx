@@ -37,36 +37,21 @@ class Login extends Component {
   };
   render() {
     return (
-      <ul>
-        <li>
-        {recipe1}
-        </li>
-        <li>
-        {meal2}
-        </li>
-        <li>
-        {meal3}
-        </li>
-        <li>
-        {meal4}
-        </li>
-        <li>
-        {meal5}
-        </li>
-        <li>
-        {meal6}
-        </li>
-        <li>
-        {meal7}
-        </li>
-        <li>
-        {meal8}
-        </li>
+      <>
+        <ul>
+          <li>{recipe1}</li>
+          <li>{recipe2}</li>
+          <li>{recipe3}</li>
+          <li>{recipe4}</li>
+          <li>{recipe5}</li>
+          <li>{recipe6}</li>
+          <li>{recipe7}</li>
+          <li>{recipe8}</li>
         </ul>
-      // <body
-      //   className="login-background"
-      //   style={{ backgroundImage: `url(${meal})`}}
-      // >
+        {/* <body
+         className="login-background"
+         style={{ backgroundImage: `url(${meal})`}}
+       >  */}
         <div>
           {this.state.isSignedIn ? (
             <span>
@@ -83,7 +68,8 @@ class Login extends Component {
             />
           )}
         </div>
-      </body>
+        {/* </body> */}
+      </>
     );
   }
 }
