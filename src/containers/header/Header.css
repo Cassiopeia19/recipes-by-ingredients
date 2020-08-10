@@ -20,6 +20,10 @@ header {
   padding: 1rem 1rem;
 }
 
+.header li:active {
+  color: green;
+}
+
 .header li a {
   display: block;
   color: black;

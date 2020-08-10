@@ -10,59 +10,59 @@ import firebase from 'firebase'
 
 class Header extends Component {
   render() {
-    const isUserLoggedIn = Auth.AuthContext;
+    // const isUserLoggedIn = Auth.AuthContext;
     return (
       <header className="header">
         <nav style={{ fontSize: "24px" }}>
           <div>
-            {isUserLoggedIn && (
+            {/* {isUserLoggedIn && ( */}
               <div>
                 <Link to="/home">
                   <img src={logo} alt="recipe logo" />
                 </Link>
               </div>
-            )}
+            {/* )} */}
           </div>
-          <ul activeStyle={{ color: "red" }}>
-            {isUserLoggedIn && (
+          <ul>
+            {/* {isUserLoggedIn && ( */}
               <li>
                 <Link to="/login" onClick={withRouter}>
                   Login
                 </Link>
               </li>
-            )}
-            {isUserLoggedIn && (
+            {/* )} */}
+            {/* {isUserLoggedIn && ( */}
               <li>
                 <Link to="/home">Home</Link>
               </li>
-            )}
-            {isUserLoggedIn && (
+            {/* )} */}
+            {/* {isUserLoggedIn && ( */}
             <li>
               <Link to="/about">About</Link>
             </li>
-            )}
-            {isUserLoggedIn && (
+            {/* )}
+            {isUserLoggedIn && ( */}
             <li>
               <Link to="/recipes">Recipes</Link>
             </li>
-            )}
-            {isUserLoggedIn && (
+            {/* )}
+            {isUserLoggedIn && ( */}
             <li>
               <Link to="/favorites">Favorites</Link>
             </li>
-            )}
-            {isUserLoggedIn && (
+            {/* )}
+            {isUserLoggedIn && ( */}
             <li>
               <Link to="/privacy-policy">PrivacyPolicy</Link>
             </li>
-            )}
-            {isUserLoggedIn && (
+            {/* )}
+            {isUserLoggedIn && ( */}
             <li style={{ float: "right" }}>
               <Link onClick={() => firebase.auth().signOut()}>Logout</Link>
             </li>
-            )}
+            {/* )} */}
           </ul>
-            {!isUserLoggedIn && (
+            {/* {!isUserLoggedIn && ( */}
               <li>
                 <Link
                   to="/login"
@@ -71,7 +71,7 @@ class Header extends Component {
                   Login
                 </Link>
               </li>
-            )}
+            {/* )} */}
         </nav>
       </header>
     );
