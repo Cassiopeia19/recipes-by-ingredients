@@ -1,9 +1,6 @@
 .login-background {
-	background-repeat: no-repeat;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-	/* border: 10px solid hsla(27,85%,50%,0.97);; */
-	clear:left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

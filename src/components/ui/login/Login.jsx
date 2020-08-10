@@ -31,7 +31,7 @@ class Login extends Component {
     return (
       <body
         className="login-background"
-        style={{ backgroundImage: `url(${meal})` }}
+        style={{ backgroundImage: `url(${meal}) no-repeat center center fixed`}}
       >
         <div>
           {this.state.isSignedIn ? (
