@@ -3,15 +3,7 @@ import { withRouter, Redirect } from "react-router";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import './Login.css'
-import recipe1 from '../../../assets/images/recipe1.jpg'
-import recipe2 from '../../../assets/images/recipe2'
-import recipe3 from '../../../assets/images/recipe3'
-import recipe4 from '../../../assets/images/recipe4'
-import recipe5 from '../../../assets/images/recipe5'
-import recipe6 from '../../../assets/images/recipe6'
-import recipe7 from '../../../assets/images/recipe7'
-import recipe8 from '../../../assets/images/recipe8'
-import recipe9 from '../../../assets/images/recipe9'
+
 
 class Login extends Component {
   state = { isSignedIn: false };
@@ -39,14 +31,62 @@ class Login extends Component {
     return (
       <>
         <ul>
-          <li>{recipe1}</li>
-          <li>{recipe2}</li>
-          <li>{recipe3}</li>
-          <li>{recipe4}</li>
-          <li>{recipe5}</li>
-          <li>{recipe6}</li>
-          <li>{recipe7}</li>
-          <li>{recipe8}</li>
+          <li>
+            <img
+              src="../../../assets/images/recipe1.jpg"
+              alt="recipe1"
+              loading="lazy"
+            />
+          </li>
+          <li>
+            <img
+              src="../../../assets/images/recipe2.jpg"
+              alt="recipe2"
+              loading="lazy"
+            />
+          </li>
+          <li>
+            <img
+              src="../../../assets/images/recipe3.jpg"
+              alt="recipe3"
+              loading="lazy"
+            />
+          </li>
+          <li>
+            <img
+              src="../../../assets/images/recipe4.jpg"
+              alt="recipe4"
+              loading="lazy"
+            />
+          </li>
+          <li>
+            <img
+              src="../../../assets/images/recipe5.jpg"
+              alt="recipe5"
+              loading="lazy"
+            />
+          </li>
+          <li>
+            <img
+              src="../../../assets/images/recipe6.jpg"
+              alt="recipe6"
+              loading="lazy"
+            />
+          </li>
+          <li>
+            <img
+              src="../../../assets/images/recipe7.jpg"
+              alt="recipe7"
+              loading="lazy"
+            />
+          </li>
+          <li>
+            <img
+              src="../../../assets/images/recipe8.jpg"
+              alt="recipe8"
+              loading="lazy"
+            />
+          </li>
         </ul>
         {/* <body
          className="login-background"
