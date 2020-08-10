@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer">
           <div className="container">
             <div className="columns">
-              <div className="column">
+              <div className="column" style={{textAlign: "center"}}>
                   All Rights Reserved &copy; 2020 Recipes by Ingredients, a
                   jennieCreation
               </div>
