@@ -12,7 +12,7 @@ header {
   background-color: transparent;
 }
 
-.header ul .active {
+.header ul a:active {
   background-color: green;
 }
 

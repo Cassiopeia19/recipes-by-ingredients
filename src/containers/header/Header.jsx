@@ -23,7 +23,7 @@ class Header extends Component {
               </div>
             {/* )} */}
           </div>
-          <ul className="active">
+          <ul>
             {/* {!isUserLoggedIn && ( */}
               <li>
                 <Link to="/login" onClick={withRouter}>
