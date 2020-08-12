@@ -3,7 +3,7 @@ import { withRouter, Redirect } from "react-router";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import './Login.css'
-
+//import recipe2 from '../../../assets/images/recipe2.jpg'
 
 class Login extends Component {
   state = { isSignedIn: false };
@@ -29,87 +29,27 @@ class Login extends Component {
   };
   render() {
     return (
-      <>
-        <ul>
-          <li>
-            <img
-              src="../../../assets/images/recipe1.jpg"
-              alt="recipe1"
-              loading="lazy"
-            />
-          </li>
-          <li>
-            <img
-              src="../../../assets/images/recipe2.jpg"
-              alt="recipe2"
-              loading="lazy"
-            />
-          </li>
-          <li>
-            <img
-              src="../../../assets/images/recipe3.jpg"
-              alt="recipe3"
-              loading="lazy"
-            />
-          </li>
-          <li>
-            <img
-              src="../../../assets/images/recipe4.jpg"
-              alt="recipe4"
-              loading="lazy"
-            />
-          </li>
-          <li>
-            <img
-              src="../../../assets/images/recipe5.jpg"
-              alt="recipe5"
-              loading="lazy"
-            />
-          </li>
-          <li>
-            <img
-              src="../../../assets/images/recipe6.jpg"
-              alt="recipe6"
-              loading="lazy"
-            />
-          </li>
-          <li>
-            <img
-              src="../../../assets/images/recipe7.jpg"
-              alt="recipe7"
-              loading="lazy"
-            />
-          </li>
-          <li>
-            <img
-              src="../../../assets/images/recipe8.jpg"
-              alt="recipe8"
-              loading="lazy"
-            />
-          </li>
-        </ul>
-        {/* <body
-         className="login-background"
-         style={{ backgroundImage: `url(${meal})`}}
-       >  */}
+      <body className="background">
         <div>
-          {this.state.isSignedIn ? (
-            <span>
-              <div>Signed In!</div>
-              <button onClick={() => firebase.auth().signOut()}>
-                Sign out!
-              </button>
-              <Redirect to="/" />
-            </span>
-          ) : (
-            <StyledFirebaseAuth
-              uiConfig={this.uiConfig}
-              firebaseAuth={firebase.auth()}
-            />
-          )}
+          {/* <img className="bg" src={recipe2} alt="recipe" /> */}
+          <div>
+            {this.state.isSignedIn ? (
+              <span>
+                <div>Signed In!</div>
+                <button onClick={() => firebase.auth().signOut()}>
+                  Sign out!
+                </button>
+                <Redirect to="/" />
+              </span>
+            ) : (
+              <StyledFirebaseAuth
+                uiConfig={this.uiConfig}
+                firebaseAuth={firebase.auth()}
+              />
+            )}
+          </div>
         </div>
-        {/* </body> */}
-      </>
+      </body>
     );
   }
 }

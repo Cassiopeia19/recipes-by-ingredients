@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 //import ReloadPage from "../../components/routes/ReloadPage";
 import "./Header.css";
 // import Auth from "../../Auth"
-import logo from '../../assets/images/recipes.png'
+import logo from '../../assets/images/recipesApple.png'
 import firebase from 'firebase'
 
 class Header extends Component {
@@ -25,11 +25,11 @@ class Header extends Component {
           </div>
           <ul>
             {/* {!isUserLoggedIn && ( */}
-              <li>
+              {/* <li>
                 <Link to="/login" onClick={withRouter}>
                   Login
                 </Link>
-              </li>
+              </li> */}
             {/* )} */}
             {/* {isUserLoggedIn && ( */}
               <li>

@@ -16,7 +16,7 @@
     "serve": "^11.3.2",
     "styled-components": "^5.1.1"
   },
-   "scripts": {
+  "scripts": {
     "start": "set PORT=4200 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "html-loader": "^1.1.0"
   }
 }

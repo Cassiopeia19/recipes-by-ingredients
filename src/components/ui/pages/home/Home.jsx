@@ -1,15 +1,55 @@
-import React from "react";
-//import app from "../../../base";
-import homeHero from "../../../../assets/images/homeHero.jpg";
-import Hero from '../../../../Hero'
+// import React from "react";
+// import homeHero from "../../../../assets/images/homeHero.jpg";
+// import Hero from '../../../../Hero'
 
-const Home = () => {
-  return (
-    <>
-      <Hero img={homeHero} />
-      {/* <button onClick={() => app.auth().signOut()}>Sign out</button> */}
-    </>
-  );
+// const Home = () => {
+//   return (
+//     <>
+//       <Hero img={homeHero} />
+//     </>
+//   );
+// }
+
+// export default Home;
+
+import React, { Component } from "react";
+
+class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      isLoaded: false,
+    };
+  }
+  componentDidMount() {
+    fetch(
+      "https://api.spoonacular.com/recipes/findByIngredients?ingredients=eggs,+bacon,+chicken,+steak,+beans,+cilantro,+limes,+tortillas&number=10&apiKey=83efa03c7e5442719cbb6aa506eec37b"
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        this.setState({ items: json, isLoaded: true });
+      });
+}
+  render() {
+    if (!this.state.isLoaded) {
+      return <div>Loading...</div>;
+    } 
+    else {
+      return (
+        <div>
+          <ul>
+            {this.state.items.map((item) => (
+              <li key={item.id}>
+                {item.title} | <img src ={item.image} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+  }
 }
 
 export default Home;
