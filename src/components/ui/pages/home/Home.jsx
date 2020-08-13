@@ -42,7 +42,7 @@ class Home extends Component {
           <ul>
             {this.state.items.map((item) => (
               <li key={item.id}>
-                {item.title} | <img src ={item.image} />
+                {item.title} | <img src ={item.image} alt=""/>
               </li>
             ))}
           </ul>

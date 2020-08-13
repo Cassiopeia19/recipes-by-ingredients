@@ -1,0 +1,5 @@
+Recipes body{
+    padding: 10px 10px;  
+    margin: 100px 200px; 
+    min-height: calc(100vh - 120px);
+}
