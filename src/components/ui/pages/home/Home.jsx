@@ -24,7 +24,7 @@ class Home extends Component {
   }
   componentDidMount() {
     fetch(
-      "https://api.spoonacular.com/recipes/findByIngredients?ingredients=eggs,+bacon,+chicken,+steak,+beans,+cilantro,+limes,+tortillas&number=10&apiKey=83efa03c7e5442719cbb6aa506eec37b"
+      "https://api.spoonacular.com/recipes/findByIngredients?ingredients=eggs,+bacon,+chicken,+steak,+beans,+cilantro,+limes,+tortillas&number=2&apiKey=83efa03c7e5442719cbb6aa506eec37b"
     )
       .then((response) => response.json())
       .then((json) => {
