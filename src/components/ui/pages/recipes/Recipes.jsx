@@ -1,75 +1,79 @@
-import React from "react";
-import recipesHero from "../../../../assets/images/recipesHero.jpg";
-import Hero from "../../../../Hero";
-import ReactDOM from "react-dom";
+import React, { useState } from "react";
 import "./Recipes.css";
+import './Recipes.scss'
+import Axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+import Recipe from "./components/Recipe";
+import Alert from "./components/Alert";
+import recipesHero from '../../../../assets/images/recipesHero.jpg'
+import Hero from '../../../../Hero'
 
-class Recipes extends React.Component {
-  defaultState = {  };
-  constructor(props) {
-    super(props);
-    this.state = {
-             ingredients: ''
-        };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+function Recipes() {
+  const [query, setQuery] = useState("");
+  const [recipes, setRecipes] = useState([]);
+  const [alert, setAlert] = useState("");
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
+  const APP_ID = "13442b91";
+  const APP_KEY = "dec4b748d2a17cf649a3f73e7ef064ba";
 
-  handleSubmit(event) {
-    alert("ingredients submitted: " + this.state.value);
-    event.preventDefault();
-    this.setState({ value: "" });
-  }
+  const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
-  render() {
-    return (
-      <>
-        <Hero img={recipesHero} />
-        <body>
-          <p>Enter ingredients...</p>
-          <form onSubmit={this.handleSubmit}>
-            <textarea
-              rows="10"
-              cols="30"
-              type="text"
-              ref="form"
-              value={this.state.value}
-              onChange={this.handleChange}
-              placeholder="Separate your ingredients by commas"
-            />
-            <p />
-            {/* <TextField
+  const getData = async () => {
+    if (query !== "") {
+      const result = await Axios.get(url);
+      if (!result.data.more) {
+        return setAlert("No food or ingredients with such name(s).");
+      }
+      console.log(result);
+      setRecipes(result.data.hits);
+      setQuery("");
+      setAlert("");
+    } else {
+      setAlert("Please enter a food or ingredient(s)");
+    }
+  };
+
+  const onChange = (e) => setQuery(e.target.value);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    getData();
+  };
+
+  return (
+    <>
+      <Hero img={recipesHero} />
+      <div className="speech-bubble-ds">
+        <p>
+          <strong>Hello!</strong>
+        </p>
+        <p>
+          Here is where you can find the recipes based upon a food name (i.e.
+          'enchiladas'), or by ingredients. For ingredients, either leave a
+          space or a comma in-between each one.
+        </p>
+        <div className="speech-bubble-ds__arrow"></div>
+      </div>
+      <div className="Recipes">
+        <form onSubmit={onSubmit} className="search-form">
+          {alert !== "" && <Alert alert={alert} />}
+          <input
             type="text"
-            value={this.state.value} 
-            onChange={this.handleChange} />
-            placeholder="# of recipes to display"
-            style={{ width: 200 }}
-          /> */}
-            <button
-              onClick={this.handleClick}
-              >Search
-            </button>
-
-            {/* <Button
-             
-              type="reset"
-              theme={"secondary"}
-              title={"reset"}
-              style={{
-                margin: "10px 10px 10px 10px",
-                backgroundColor: "pink",
-                color: "black",
-              }}
-            /> */}
-          </form>
-        </body>
-      </>
-    );
-  }
+            name="query"
+            onChange={onChange}
+            value={query}
+            autoComplete="off"
+            placeholder="Enter food or ingredient(s)"
+          />
+          <input type="submit" value="Search" />
+        </form>
+        <div className="recipes">
+          {recipes !== [] &&
+            recipes.map((recipe) => <Recipe key={uuidv4()} recipe={recipe} />)}
+        </div>
+      </div>
+    </>
+  );
 }
-ReactDOM.render(<Recipes />, document.getElementById("root"));
+
 export default Recipes;

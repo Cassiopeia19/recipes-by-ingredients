@@ -29,7 +29,7 @@ header {
 }
 
 .header li a:hover {
- color: #61c985;
+ color: #FAA3B5;
 }
 
 .header .logo {
@@ -42,8 +42,8 @@ header {
     position: inherit;
     top:10px; 
     left:10px;
-    width:60px;
-    height:60px;
+    width:70px;
+    height:70px;
     overflow:hidden;
     padding: 1rem;
     float: left;

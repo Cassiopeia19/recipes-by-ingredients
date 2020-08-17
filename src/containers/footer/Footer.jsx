@@ -8,8 +8,8 @@ const Footer = () => {
           <div className="container">
             <div className="columns">
               <div className="column">
-                  All Rights Reserved &copy; 2020 Recipes by Ingredients, a
-                  jennieCreation
+                Copyright &copy; jennieCreation {new Date().getFullYear()}. All
+                Rights Reserved
               </div>
             </div>
           </div>
