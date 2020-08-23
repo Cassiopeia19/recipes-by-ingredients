@@ -1,20 +1,14 @@
 import React from "react";
 import './Footer.css'
+import logo from "../../assets/images/logo.png";
 
 const Footer = () => {
     return (
-      <div className="wrapper">
-        <footer className="footer">
-          <div className="container">
-            <div className="columns">
-              <div className="column">
-                Copyright &copy; jennieCreation {new Date().getFullYear()}. All
-                Rights Reserved
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+      <footer className="footer">
+        <img src={logo} alt="recipe logo" />
+         &copy; jennieCreation {new Date().getFullYear()}. All Rights
+        Reserved
+      </footer>
     );
   }
 

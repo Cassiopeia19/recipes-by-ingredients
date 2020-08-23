@@ -1,14 +1,19 @@
 footer {
-    margin:0 auto;
-    background:#5F4A8B;
-    color:#fff;
-    padding:1rem 375px;
-    text-align: center;
-    flex-shrink: 0;
-    position:fixed;
-    width:1600px;
-    height: 40px;
-    bottom:0px;
-    left: 0px;
-}
- 
+display:flex;
+background-color: #5F4A8B;
+color:#fff;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+height: 40px;
+width: 100%;
+justify-content:center;
+align-items:center;
+ }
+
+.footer img {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    }

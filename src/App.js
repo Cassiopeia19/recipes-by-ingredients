@@ -11,10 +11,12 @@ import { AuthProvider } from "./Auth";
 import PrivateRoute from "./PrivateRoute";
 import Header from "./containers/header/Header";
 import Footer from "./containers/footer/Footer";
+import Global from "./global"
 
 const App = () => {
   return (
     <>
+      <Global />
       <div className="App">
         <AuthProvider>
           <Router>

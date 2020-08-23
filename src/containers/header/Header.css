@@ -17,7 +17,7 @@ header {
   height: 55px;
   width: 100px;
   position: relative;
-  padding: 1rem 1rem;
+  padding-right: 1rem;
 }
 
 .header li a {
@@ -32,18 +32,12 @@ header {
  color: #FAA3B5;
 }
 
-.header .logo {
-        display: block;
-        float: left;
-        padding: 4px 3px;
-    }
-
 .header img {
     position: inherit;
     top:10px; 
     left:10px;
-    width:70px;
-    height:70px;
+    width:100px;
+    height:100px;
     overflow:hidden;
     padding: 1rem;
     float: left;

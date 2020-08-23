@@ -156,4 +156,7 @@ Recipes html {
   font-size: 1.5rem;
   color: #888;
 }
+p {
+    font-size: 18px;
+}
 

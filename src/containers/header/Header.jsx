@@ -16,25 +16,25 @@ class Header extends Component {
         <nav style={{ fontSize: "24px" }}>
           <div>
             {/* {isUserLoggedIn && ( */}
-              <div>
-                <Link to="/home">
-                  <img src={logo} alt="recipe logo" />
-                </Link>
-              </div>
+            <div>
+              <Link to="/home">
+                <img src={logo} alt="recipe logo" />
+              </Link>
+            </div>
             {/* )} */}
           </div>
           <ul>
             {/* {!isUserLoggedIn && ( */}
-              {/* <li>
+            {/* <li>
                 <Link to="/login" onClick={withRouter}>
                   Login
                 </Link>
               </li> */}
             {/* )} */}
             {/* {isUserLoggedIn && ( */}
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
             {/* )} */}
             {/* {isUserLoggedIn && ( */}
             <li>

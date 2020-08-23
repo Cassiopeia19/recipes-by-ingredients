@@ -3,7 +3,7 @@ import { withRouter, Redirect } from "react-router";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import './Login.css'
-//import recipe2 from '../../../assets/images/recipe2.jpg'
+import recipe2 from '../../../assets/images/recipe2.jpg'
 
 class Login extends Component {
   state = { isSignedIn: false };
@@ -29,27 +29,25 @@ class Login extends Component {
   };
   render() {
     return (
-      <body className="background">
+      <>
+        <img className='img bg' src={recipe2} alt="recipe"/>
         <div>
-          {/* <img className="bg" src={recipe2} alt="recipe" /> */}
-          <div>
-            {this.state.isSignedIn ? (
-              <span>
-                <div>Signed In!</div>
-                <button onClick={() => firebase.auth().signOut()}>
-                  Sign out!
-                </button>
-                <Redirect to="/" />
-              </span>
-            ) : (
-              <StyledFirebaseAuth
-                uiConfig={this.uiConfig}
-                firebaseAuth={firebase.auth()}
-              />
-            )}
-          </div>
+          {this.state.isSignedIn ? (
+            <span>
+              <div>Signed In!</div>
+              <button onClick={() => firebase.auth().signOut()}>
+                Sign out!
+              </button>
+              <Redirect to="/" />
+            </span>
+          ) : (
+            <StyledFirebaseAuth
+              uiConfig={this.uiConfig}
+              firebaseAuth={firebase.auth()}
+            />
+          )}
         </div>
-      </body>
+        </>
     );
   }
 }
