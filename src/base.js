@@ -12,6 +12,7 @@ const uiConfig = firebase.initializeApp({
 
 export default uiConfig;
 
+//needed for deployed app
 // "scripts": {
 //   "dev": "react-scripts start",
 //   "start": "serve -s build",
@@ -20,3 +21,13 @@ export default uiConfig;
 //   "eject": "react-scripts eject",
 //   "heroku-postbuild": "npm run build"
 //   },
+
+//needed to run in localhost only
+// "scripts": {
+  //   "start": "set PORT=4200 && react-scripts start",
+  //   "build": "react-scripts build",
+  //   "test": "react-scripts test",
+  //   "eject": "react-scripts eject",
+  //   "predeploy": "npm run build",
+  //   "deploy": "gh-pages -d build"
+  // },
