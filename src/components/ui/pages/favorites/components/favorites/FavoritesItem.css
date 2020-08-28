@@ -1,0 +1,31 @@
+.favorites-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.favorites-item img {
+  width: 5rem;
+}
+.favorites-item h4 {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 0;
+}
+.favorites-item h5 {
+  margin: 0.5rem 0;
+  letter-spacing: var(--mainSpacing);
+}
+.favorites-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.remove-btn {
+  color: var(--darkGrey);
+  letter-spacing: var(--mainSpacing);
+  cursor: pointer;
+  font-size: 0.8rem;
+}

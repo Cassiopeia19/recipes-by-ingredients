@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import RecipeDetails from "./RecipeDetails";
+import {useHistory} from 'react-router-dom'
 
 const Recipe = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const { label,image, url, ingredients } = recipe.recipe;
+  const history = useHistory();
 
   return (
     <>
@@ -15,8 +17,17 @@ const Recipe = ({ recipe }) => {
         </a>
         <i
           className="fa fa-heart-o"
-          style={{ fontSize: "36px", color: "red",float:"right" }}
+          style={{ fontSize: "36px", color: "red", float: "right" }}
+          onClick={() => {
+             history.push("/favorites");}}
         ></i>
+        {/* <button
+          onClick={() => {
+            history.push("/favorites");
+          }}
+        >
+          Add to Favorites
+        </button> */}
         <button onClick={() => setShow(!show)}>Ingredients</button>
         {show && <RecipeDetails ingredients={ingredients} />}
       </div>
