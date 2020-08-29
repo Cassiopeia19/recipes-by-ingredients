@@ -22,33 +22,14 @@ class Login extends Component {
   };
 
   componentDidMount = () => {
-    firebase.auth().onAuthStateChanged((firebaseUser) => {
-      this.setState({ isSignedIn: !!firebaseUser });
-      if (firebaseUser) {
-        firebase
-          .database()
-          .ref("users/" + firebaseUser.uid + "/favorites")
-          .on("value", (snapshot) => {
-            let newFavorites = [];
-            snapshot.forEach(function (favorite) {
-              newFavorites.push({
-                id: favorite.key,
-                ...favorite.val(),
-              });
-            });
-            this.setState({
-              user: firebaseUser, 
-              favorites: newFavorites,
-            });
-          });
-      }
+    firebase.auth().onAuthStateChanged((user) => {
+      this.setState({ isSignedIn: !!user });
+      console.log("user", user);
     });
   };
-
   render() {
     return (
-      <>
-        <img className="img bg" src={recipe2} alt="recipe" />
+        <img className='img bg' src={recipe2} alt="recipe">
         <div>
           {this.state.isSignedIn ? (
             <span>
@@ -65,7 +46,7 @@ class Login extends Component {
             />
           )}
         </div>
-      </>
+      </img>
     );
   }
 }
