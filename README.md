@@ -1,4 +1,4 @@
-This project (Reciplia) has been entirely coded in React, utilizes Firebase authentication social logins.  It makes use of an API for recipes. It has been deployed via Heroku.  A YouTube video will be made as a means of presenting this app.
+This project (Reciplia) has been entirely coded in React, utilizes Firebase authentication social logins, as well as the NoSQL database-Firebase.  It makes use of an API for recipes. It has been deployed via Heroku.  A YouTube video will be made as a means of presenting this app.
 
 This app, once completed, will feature:
 * social login options of Google, Facebook, Twitter, GitHub, and email
