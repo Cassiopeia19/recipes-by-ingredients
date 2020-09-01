@@ -19,16 +19,6 @@ Recipes html {
   align-items: center;
 }
 
-/* Recipes h1 {
-  font-size: 5rem;
-  letter-spacing: 0.1rem;
-  font-style: italic;
-  color: #987AB7;
-  text-shadow: 0 0.2rem 5rem rgb(119, 115, 115);
-  text-transform: uppercase;
-  margin: 4rem 0;
-} */
-
 .search-form {
   width: 60rem;
   height: 10rem;

@@ -16,7 +16,7 @@ function Recipes() {
   const APP_ID = "13442b91";
   const APP_KEY = "dec4b748d2a17cf649a3f73e7ef064ba";
 
-  const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
+  const url = `https://api.edamam.com/search?q=${query}&from=1&to=100&&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   const getData = async () => {
     if (query !== "") {

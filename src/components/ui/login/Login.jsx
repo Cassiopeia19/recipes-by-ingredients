@@ -22,23 +22,19 @@ class Login extends Component {
   };
 
   componentDidMount = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      this.setState({ isSignedIn: !!user });
-      console.log("user", user);
-    });
+     firebase.auth().onAuthStateChanged((firebaseUser) => {
+       this.setState({ isSignedIn: !!firebaseUser });
+       console.log("user", firebaseUser);
+     });
   };
   render() {
+       
     return (
-        <img className='img bg' src={recipe2} alt="recipe">
+      <>
+        <img className='img bg' src={recipe2} alt="recipe"/>
         <div>
           {this.state.isSignedIn ? (
-            <span>
-              <div>Signed In!</div>
-              <button onClick={() => firebase.auth().signOut()}>
-                Sign out!
-              </button>
               <Redirect to="/" />
-            </span>
           ) : (
             <StyledFirebaseAuth
               uiConfig={this.uiConfig}
@@ -46,7 +42,7 @@ class Login extends Component {
             />
           )}
         </div>
-      </img>
+        </>
     );
   }
 }
