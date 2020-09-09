@@ -19,7 +19,7 @@ const HeroWrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: ${(props) => (props.max ? "80vh" : "60vh")};
-  color: var(--mainWhite);
+  color: white;
   background:
 /* linear-gradient(var(--primaryRGBA), 
 var(--prmaryRGBA)),  */ url(${(
@@ -31,7 +31,7 @@ var(--prmaryRGBA)),  */ url(${(
     font-size: 3.5rem;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
-    letter-spacing: var(--mainSpacing);
+    letter-spacing: 0.3rem;
   }
 `;
 

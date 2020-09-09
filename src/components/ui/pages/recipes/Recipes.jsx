@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Recipes.css";
-import './Recipes.scss'
+import "./Recipes.scss";
 import Axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Recipe from "./components/Recipe";
@@ -25,7 +25,11 @@ function Recipes() {
         return setAlert("No food or ingredients with such name(s).");
       }
       console.log(result);
-      setRecipes(result.data.hits);
+      const recipes = result.data.hits.map((recipe) => {
+        delete recipe.recipe.totalNutrients;
+        return recipe;
+      });
+      setRecipes(recipes);
       setQuery("");
       setAlert("");
     } else {

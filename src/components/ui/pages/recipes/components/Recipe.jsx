@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import RecipeDetails from "./RecipeDetails";
-import instance from '../../../../../axios/instance'
+import instance from "../../../../../axios/instance";
 import { Popup } from "semantic-ui-react";
 
 const Recipe = ({ recipe }) => {
-const [show, setShow] = useState(false);
-const { label,image, url, ingredients } = recipe.recipe;
+  const [show, setShow] = useState(false);
+  const { label, image, url, ingredients } = recipe.recipe;
 
   return (
     <>
