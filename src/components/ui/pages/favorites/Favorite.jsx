@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import RecipeDetails from "../recipes/components/RecipeDetails";
 import { Popup } from "semantic-ui-react";
 import { db } from "../../../../base";
+import firebase from 'firebase'
 
 const Favorite = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const { label, image, url, ingredients } = recipe.recipe;
+  const uid = firebase.auth().currentUser.uid;
 
   return (
     <>
@@ -20,7 +22,7 @@ const Favorite = ({ recipe }) => {
                 style={{ fontSize: "30px", color: "black", float: "right" }}
                 onClick={async () => {
                   const result = await db
-                    .ref(`/favorites/${recipe.id}`)
+                    .ref(`users${uid}/favorites/${recipe.id}`)
                     .remove();
                   console.log(result, recipe.id);
                   alert(

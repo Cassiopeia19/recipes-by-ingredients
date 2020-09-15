@@ -5,18 +5,25 @@ import "./Favorites.css";
 import Favorite from "./Favorite";
 import { v4 as uuidv4 } from "uuid";
 import { db } from "../../../../base";
+import firebase from 'firebase'
+import Spinner from '../../../spinner/Spinner'
 
 class Favorites extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoaded: false,
-      favorites: [],
+      users: {
+          uid: {
+            favorites: [],
+          },
+      },
     };
   }
 
   componentDidMount() {
-    db.ref("/favorites").on("value", (snapshot) => {
+    var uid = firebase.auth().currentUser.uid;
+    db.ref(`users/${uid}/favorites`).on("value", (snapshot) => {
       console.log("favorites: ", snapshot.toJSON());
       this.setState({
         isLoaded: true,
@@ -35,7 +42,7 @@ class Favorites extends Component {
     console.log("favorites: ", favorites);
 
     if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <Spinner />;
     } else {
       return (
         <>
@@ -58,5 +65,4 @@ class Favorites extends Component {
     }
   }
 }
-
 export default Favorites;

@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import RecipeDetails from "./RecipeDetails";
 import instance from "../../../../../axios/instance";
 import { Popup } from "semantic-ui-react";
+import firebase from 'firebase'
 
 const Recipe = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const { label, image, url, ingredients } = recipe.recipe;
+  const uid = firebase.auth().currentUser.uid;
 
   return (
     <>
@@ -18,7 +20,8 @@ const Recipe = ({ recipe }) => {
                 className="fa fa-heart"
                 style={{ fontSize: "30px", color: "red", float: "right" }}
                 onClick={() =>
-                  instance.post("./favorites.json", recipe).then((response) => {
+                  instance.post(`users/${uid}/favorites.json`, recipe).then((response) => {
+                    //   instance.post(`users/${uid}/favorites.json`, recipe).then((response) => {
                     console.log(response);
                     alert("This recipe has been added to your favorites' list");
                   })
@@ -44,5 +47,4 @@ const Recipe = ({ recipe }) => {
     </>
   );
 };
-
 export default Recipe;
