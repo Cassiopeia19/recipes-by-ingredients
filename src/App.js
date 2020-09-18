@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import Header from "./containers/header/Header";
 import Footer from "./containers/footer/Footer";
 import Global from "./global"
+import {FavoritesProvider} from './contexts/FavoritesContext'
 
 const App = () => {
   return (
@@ -19,22 +20,24 @@ const App = () => {
       <Global />
       <div className="App">
         <AuthProvider>
-          <Router>
-            <Header />
-            <Switch>
-              <PrivateRoute exact path="/" component={Home} />
-              <PrivateRoute exact path="/home" component={Home} />
-              <PrivateRoute exact path="/about" component={About} />
-              <PrivateRoute exact path="/recipes" component={Recipes} />
-              <PrivateRoute exact path="/favorites" component={Favorites} />
-              <PrivateRoute
-                exact
-                path="/privacy-policy"
-                component={PrivacyPolicy}
-              />
-              <Route exact path="/login" component={Login} />
-            </Switch>
-          </Router>
+           <FavoritesProvider> 
+            <Router>
+              <Header />
+              <Switch>
+                <PrivateRoute exact path="/" component={Home} />
+                <PrivateRoute exact path="/home" component={Home} />
+                <PrivateRoute exact path="/about" component={About} />
+                <PrivateRoute exact path="/recipes" component={Recipes} />
+                <PrivateRoute exact path="/favorites" component={Favorites} />
+                <PrivateRoute
+                  exact
+                  path="/privacy-policy"
+                  component={PrivacyPolicy}
+                  />
+                <Route exact path="/login" component={Login} />
+              </Switch>
+            </Router>
+          </FavoritesProvider>
         </AuthProvider>
       </div>
       <Footer />

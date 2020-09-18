@@ -22,11 +22,11 @@ const Favorite = ({ recipe }) => {
                 style={{ fontSize: "30px", color: "black", float: "right" }}
                 onClick={async () => {
                   const result = await db
-                    .ref(`users${uid}/favorites/${recipe.id}`)
+                    .ref(`users/${uid}/favorites/${recipe.id}`)
                     .remove();
                   console.log(result, recipe.id);
                   alert(
-                    "This recipe has been removed from your favorites' list"
+                    "The recipe has been removed from your favorites' list"
                   );
                 }}
               />
