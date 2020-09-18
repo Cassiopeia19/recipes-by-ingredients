@@ -8,9 +8,7 @@ import { FavoritesContext } from '../../../../../contexts/FavoritesContext'
 const Recipe = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const { label, image, url, ingredients } = recipe.recipe;
-   const favorites = useContext(FavoritesContext);  
-  // remove import for favorites
-  // get favorites from context instead
+  const favorites = useContext(FavoritesContext);  
   const recipeIsInMyFavorites =
    favorites.findIndex(
       (favorite) => favorite.recipe.uri === recipe.recipe.uri
