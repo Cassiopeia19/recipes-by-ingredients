@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import "./Header.css";
-import logo from '../../assets/images/logo.png'
-import firebase from 'firebase'
+import logo from "../../assets/images/logo.png";
+import firebase from "firebase";
 
 class Header extends Component {
   render() {
