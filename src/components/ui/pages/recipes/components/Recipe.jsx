@@ -9,12 +9,13 @@ const Recipe = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const { label, image, url, ingredients } = recipe.recipe;
   const favorites = useContext(FavoritesContext);
-const [recipeIsInMyFavorites, setRecipeIsInMyFavorites] = useState(false);
-useEffect(() => {
-  setRecipeIsInMyFavorites(
-    favorites.some((favorite) => favorite.recipe.uri === recipe.recipe.uri)
-  );
-}, [favorites, recipe.recipe.uri]);
+
+  const [recipeIsInMyFavorites, setRecipeIsInMyFavorites] = useState(false);
+  useEffect(() => {
+    setRecipeIsInMyFavorites(
+      favorites.some((favorite) => favorite.recipe.uri === recipe.recipe.uri)
+    );
+  }, [favorites, recipe.recipe.uri]);
 
   const uid = firebase.auth().currentUser.uid;
   const addToFavorites = () => {
