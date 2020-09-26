@@ -7,7 +7,7 @@ import Recipes from "./components/ui/pages/recipes/Recipes";
 import Favorites from "./components/ui/pages/favorites/Favorites"
 import PrivacyPolicy from "./components/ui/pages/privacyPolicy/PrivacyPolicy"
 import Login from "./components/ui/login/Login";
-import { AuthProvider } from "./contexts/Auth";
+import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./PrivateRoute";
 import Header from "./containers/header/Header";
 import Footer from "./containers/footer/Footer";
@@ -15,6 +15,7 @@ import Global from "./global"
 import {FavoritesProvider} from './contexts/FavoritesContext'
 
 const App = () => {
+ 
   return (
     <>
       <Global />

@@ -1,8 +1,8 @@
-import React, {createContext, useEffect, useState} from 'react'
-import firebase from 'firebase'
-import {db} from '../base'
+import React, { createContext, useEffect, useState } from "react";
+import firebase from "firebase";
+import { db } from "../base";
 
-export const FavoritesContext = createContext()
+export const FavoritesContext = createContext();
 
 export function FavoritesProvider(props) {
   const [favorites, setFavorites] = useState([]);
@@ -13,7 +13,7 @@ export function FavoritesProvider(props) {
     var user = firebase.auth().currentUser;
     var uid;
     if (user != null) {
-        uid = user.uid;
+      uid = user.uid;
       db.ref(`users/${uid}/favorites`).on("value", (snapshot) => {
         console.log("favorites: ", snapshot.toJSON());
 
@@ -21,10 +21,11 @@ export function FavoritesProvider(props) {
           ([id, props]) => ({
             id,
             ...props,
-      })
+          })
         );
         setFavorites(results);
-    })};
+      });
+    }
   }, []);
   return (
     <FavoritesContext.Provider value={favorites}>

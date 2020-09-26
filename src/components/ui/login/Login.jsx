@@ -22,19 +22,28 @@ class Login extends Component {
   };
 
   componentDidMount = () => {
-     firebase.auth().onAuthStateChanged((firebaseUser) => {
-       this.setState({ isSignedIn: !!firebaseUser });
-       console.log("user", firebaseUser);
-     });
+    firebase.auth().onAuthStateChanged((firebaseUser) => {
+      this.setState({ isSignedIn: !!firebaseUser });
+      console.log("user", firebaseUser);
+    });
   };
+
+  login() {
+    firebase.auth.signInWithPopup(firebase.provider).then((result) => {
+      this.callFirebaseFunction();
+      const user = result.user;
+      this.setState({
+        user,
+      });
+    });
+  }
   render() {
-       
     return (
       <>
-        <img className='img bg' src={recipe2} alt="recipe"/>
+        <img className="img bg" src={recipe2} alt="recipe" />
         <div>
           {this.state.isSignedIn ? (
-              <Redirect to="/" />
+            <Redirect to="/" />
           ) : (
             <StyledFirebaseAuth
               uiConfig={this.uiConfig}
@@ -42,7 +51,7 @@ class Login extends Component {
             />
           )}
         </div>
-        </>
+      </>
     );
   }
 }
