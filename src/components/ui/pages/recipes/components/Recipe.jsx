@@ -40,8 +40,12 @@ const Recipe = ({ recipe }) => {
                 style={{
                   fontSize: "30px",
                   color: recipeIsInMyFavorites ? "red" : "white",
-                  float: "right",
-                }}
+                  right: "10px",
+                  position: "absolute",
+                  top: "50%",
+                  mTransform: "translateY(-50%)",
+                  transform: "translateY(-50%)"
+                   }}
                 onClick={() =>
                   recipeIsInMyFavorites ? noop() : addToFavorites()
                 }

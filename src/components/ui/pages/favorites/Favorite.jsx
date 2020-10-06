@@ -19,7 +19,15 @@ const Favorite = ({ recipe }) => {
               <i
                 className="fa fa-trash-o"
                 aria-hidden="true"
-                style={{ fontSize: "30px", color: "black", float: "right" }}
+                style={{ 
+                 fontSize: "30px", 
+                 color: "black",
+                 right: "10px",
+                 position: "absolute",
+                 top: "50%",
+                 mTransform: "translateY(-50%)",
+                 transform: "translateY(-50%)"
+                   }}
                 onClick={async () => {
                   const result = await db
                     .ref(`users/${uid}/favorites/${recipe.id}`)

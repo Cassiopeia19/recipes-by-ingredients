@@ -55,7 +55,7 @@ Favorites html {
   top: 2.5rem;
   left: 2.5rem;
   right: 2.5rem;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 400;
   text-shadow: 0 0.5rem 0.5rem #555;
   color: #fff;
@@ -84,6 +84,7 @@ Favorites html {
   border-radius: 0.5rem;
   height: 3rem;
   width: 100%;
+  cursor: pointer;
 }
 
 .ingredient-list {

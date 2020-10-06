@@ -18,7 +18,7 @@ const HeroWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: ${(props) => (props.max ? "80vh" : "60vh")};
+  min-height: ${(props) => (props.max ? "80vh" : "45vh")};
   color: white;
   background:
  url(${(
@@ -28,7 +28,9 @@ const HeroWrapper = styled.div`
   .title {
     padding-top: 2rem;
     font-size: 3.5rem;
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+    text@media (min-width: 768px) {
+  background: url('my-hero-image.jpg') no-repeat center top;
+}-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.3rem;
   }
