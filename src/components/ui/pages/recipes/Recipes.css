@@ -129,6 +129,7 @@ Recipes html {
   border: none;
   border-radius: 0.5rem;
   height: 3rem;
+  cursor: pointer;
 }
 
 .ingredient-list {

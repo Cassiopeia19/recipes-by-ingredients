@@ -44,7 +44,8 @@ const Recipe = ({ recipe }) => {
                   position: "absolute",
                   top: "50%",
                   mTransform: "translateY(-50%)",
-                  transform: "translateY(-50%)"
+                  transform: "translateY(-50%)",
+                  cursor: "pointer"
                    }}
                 onClick={() =>
                   recipeIsInMyFavorites ? noop() : addToFavorites()
