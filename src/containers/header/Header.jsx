@@ -7,18 +7,17 @@ import logo from "../../assets/images/logo.png";
 import firebase from "firebase";
 
 class Header extends Component {
+
   render() {
-      // var user = firebase.auth().currentUser; 
-      // if (user) {     
         return (
           <header className="header">
-            <nav style={{ fontSize: "24px" }}>
-              <div>
-                <Link to="/home">
-                  <img src={logo} alt="recipe logo" />
-                </Link>
-              </div>
+            <nav>
               <ul>
+                <div>
+                  <Link to="/home">
+                    <img src={logo} alt="recipe logo" />
+                  </Link>
+                </div>
                 <li>
                   <Link to="/home">Home</Link>
                 </li>
@@ -31,19 +30,13 @@ class Header extends Component {
                 <li>
                   <Link to="/favorites">Favorites</Link>
                 </li>
-                <li style={{ float: "right" }}>
+                <li>
                   <Link onClick={() => firebase.auth().signOut()}>Logout</Link>
                 </li>
               </ul>
             </nav>
           </header>
         );
-      // } else {
-      //   return (
-      //     user = null,
-      //     alert("You are not logged in.")    
-      //   )     
-      // } 
   }
 }
 
