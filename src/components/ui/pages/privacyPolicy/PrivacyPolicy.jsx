@@ -2,10 +2,12 @@ import React from "react";
 import './PrivacyPolicy.css'
 import privacyPolicyHero from "../../../../assets/images/privacyPolicyHero.jpg";
 import Hero from "../../../../Hero";
+import Header from "../../../../containers/header/Header";
 
 const PrivacyPolicy = () => {
   return (
     <>
+    <Header />
       <Hero img={privacyPolicyHero} />
       <body>
         <main>

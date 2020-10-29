@@ -14,6 +14,8 @@ export default function Hero({ img, title, max, children }) {
 }
 
 const HeroWrapper = styled.div`
+  position:relative;
+  margin-top:100px;
   text-align: center;
   display: flex;
   align-items: center;

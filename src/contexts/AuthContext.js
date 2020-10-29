@@ -10,10 +10,13 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     app.auth().onAuthStateChanged((user) => {
+      // if (user && currentUser && user.uid !== currentUser.uid) {
+      //   window.location.reload();
+      // }
       setCurrentUser(user);
       setPending(false);
     });
-  }, []);
+  }, [currentUser]);
 
   if (pending) {
     return <Spinner />;

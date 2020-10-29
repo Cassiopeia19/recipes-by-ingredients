@@ -5,8 +5,9 @@ import Axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import Recipe from "./components/Recipe";
 import Alert from "./components/Alert";
-import recipesHero from '../../../../assets/images/recipesHero.jpg'
-import Hero from '../../../../Hero'
+import recipesHero from "../../../../assets/images/recipesHero.jpg";
+import Hero from "../../../../Hero";
+import Header from "../../../../containers/header/Header";
 
 function Recipes() {
   const [query, setQuery] = useState("");
@@ -46,7 +47,10 @@ function Recipes() {
 
   return (
     <>
+    <Header />
       <Hero img={recipesHero} />
+      <br />
+      <br />
       <div className="speech-bubble-ds">
         <p>
           <strong>Hello!</strong>
@@ -79,5 +83,4 @@ function Recipes() {
     </>
   );
 }
-
 export default Recipes;

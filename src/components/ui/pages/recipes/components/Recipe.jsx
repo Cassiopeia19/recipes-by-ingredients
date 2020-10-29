@@ -8,7 +8,8 @@ import { FavoritesContext } from "../../../../../contexts/FavoritesContext";
 const Recipe = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const { label, image, url, ingredients } = recipe.recipe;
-  const favorites = useContext(FavoritesContext);
+  const favoritesContext = useContext(FavoritesContext);
+  const {favorites, setFavorites} = favoritesContext;
 
   const [recipeIsInMyFavorites, setRecipeIsInMyFavorites] = useState(false);
   useEffect(() => {
@@ -20,6 +21,12 @@ const Recipe = ({ recipe }) => {
   const uid = firebase.auth().currentUser.uid;
   const addToFavorites = () => {
     instance.post(`users/${uid}/favorites.json`, recipe).then((response) => {
+      // we need to add the new favorite to cache
+      // TODO: (brent) If there will be other ways of updating the favorites cache, 
+      // this functionalty should be moved into the favorites provider instead.
+      const newFavorites = favorites.slice(0)
+      newFavorites.push(recipe)
+      setFavorites(newFavorites)
       console.log(response);
       alert("This recipe has been added to your favorites' list");
     });

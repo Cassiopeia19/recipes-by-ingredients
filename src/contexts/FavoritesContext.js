@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
-import firebase from "firebase";
 import { db } from "../base";
+import { AuthContext } from './AuthContext'
 
 export const FavoritesContext = createContext();
 
@@ -8,15 +8,18 @@ export function FavoritesProvider(props) {
   const [favorites, setFavorites] = useState([]);
   const { children } = props;
 
+  // getting currentUser from AuthContext
+  const authContextObject = React.useContext(AuthContext)
+
   // Make the DB Call
   useEffect(() => {
-    var user = firebase.auth().currentUser;
+    var user = authContextObject.currentUser;  // getting this from AuthContext.currentUser instead
     var uid;
     if (user != null) {
       uid = user.uid;
       db.ref(`users/${uid}/favorites`).on("value", (snapshot) => {
         console.log("favorites: ", snapshot.toJSON());
-
+        
         const results = Object.entries(snapshot.toJSON() || {}).map(
           ([id, props]) => ({
             id,
@@ -26,9 +29,14 @@ export function FavoritesProvider(props) {
         setFavorites(results);
       });
     }
-  }, []);
+  }, [authContextObject.currentUser]);  // Adding currentUser here as a dependency
+
+  const providerValue = {
+    favorites: favorites,
+    setFavorites: setFavorites,
+  }
   return (
-    <FavoritesContext.Provider value={favorites}>
+    <FavoritesContext.Provider value={providerValue}>
       {children}
     </FavoritesContext.Provider>
   );

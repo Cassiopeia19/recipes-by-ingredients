@@ -6,11 +6,13 @@ import Favorite from "./Favorite";
 import { v4 as uuidv4 } from "uuid";
 import Spinner from '../../../spinner/Spinner'
 import {FavoritesContext} from '../../../../contexts/FavoritesContext.js'
+import Header from "../../../../containers/header/Header";
 
 function Favorites() {
   // eslint-disable-next-line no-unused-vars
   const [isLoaded, setIsLoaded] = useState(true);
-  const favorites = useContext(FavoritesContext) 
+  const favoritesContext = useContext(FavoritesContext);
+  const {favorites} = favoritesContext;
     
   console.log("favorites: ", favorites);
 
@@ -19,6 +21,7 @@ function Favorites() {
   } else {
     return (
       <>
+      <Header />
         <Hero
           title="your favorites!"
           className="text-title"

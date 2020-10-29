@@ -9,7 +9,6 @@ import PrivacyPolicy from "./components/ui/pages/privacyPolicy/PrivacyPolicy"
 import Login from "./components/ui/login/Login";
 import { AuthProvider } from "./contexts/AuthContext";
 import PrivateRoute from "./PrivateRoute";
-import Header from "./containers/header/Header";
 import Footer from "./containers/footer/Footer";
 import Global from "./global"
 import {FavoritesProvider} from './contexts/FavoritesContext'
@@ -23,7 +22,6 @@ const App = () => {
         <AuthProvider>
            <FavoritesProvider> 
             <Router>
-              <Header />
               <Switch>
                 <PrivateRoute exact path="/" component={Home} />
                 <PrivateRoute exact path="/home" component={Home} />

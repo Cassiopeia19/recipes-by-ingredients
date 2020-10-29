@@ -7,10 +7,12 @@ import recipe6 from '../../../../assets/images/recipe6.jpg'
 import recipe7 from '../../../../assets/images/recipe7.jpg'
 import recipe8 from '../../../../assets/images/recipe8.jpg'
 import recipe12 from "../../../../assets/images/recipe12.jpg";
+import Header from "../../../../containers/header/Header";
 
 const About = () => {
   return (
     <>
+    <Header />
       <Hero img={aboutHero} />
       <div className="textbox">
         <h1 className="header">About this website</h1>
