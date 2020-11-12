@@ -14,8 +14,7 @@
 
 About body {
 	background: #222;
-	/* font-family: 'Caveat', sans-serif; */
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 	
 	About a {
@@ -26,7 +25,7 @@ About body {
 	.header {
 		font-family: 'Caveat', sans-serif;
 		text-align: center;
-        font-size: 3em;
+        font-size: 3rem;
         color: black;
 	}
 	
