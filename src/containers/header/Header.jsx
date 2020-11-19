@@ -31,6 +31,19 @@ class Header extends Component {
             <li>
               <Link onClick={() => firebase.auth().signOut()}>Logout</Link>
             </li>
+            <li>
+              <img
+                src={firebase.auth().currentUser.photoURL}
+                style={{
+                  borderRadius: "3.125rem",
+                  height: "3.125rem",
+                  width: "3.125rem",
+                  position: "absolute",
+                  top: "1.115rem",
+                  margin: "1.5625rem 3.125rem 4.6875rem 75rem",
+                }}
+              />
+            </li>
           </ul>
         </nav>
       </header>
