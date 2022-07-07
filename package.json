@@ -1,6 +1,6 @@
 {
   "name": "recipes-by-ingredients",
-  "version": "0.1.0",
+  "version": "1.2.1",
   "engines": {
     "node": "18.5.0",
     "npm": "8.13.2"
