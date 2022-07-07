@@ -2,8 +2,8 @@
   "name": "recipes-by-ingredients",
   "version": "0.1.0",
   "engines": {
-    "node": "14.15.5",
-    "npm": "7.10.0"
+    "node": "18.5.0",
+    "npm": "8.13.2"
   },
   "private": true,
   "dependencies": {
