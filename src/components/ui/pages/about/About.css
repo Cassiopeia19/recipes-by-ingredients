@@ -128,3 +128,6 @@ About body {
   float: right;
   padding: 0.2rem;
 }
+.smiley:after {
+    content: "\01F683";
+}

@@ -23,7 +23,8 @@ const About = () => {
           find a recipe that you like, you then have the options of saving that recipe 
           to your favorite's list. Our wish is that you enjoy using this website
           and it becomes a staple of your everyday life. Our goal is to make
-          your time searching for recipes just a little bit easier.{" "}
+          your time searching for recipes just a little bit easier. 
+          <div className="smiley"></div>{" "}
         </p>
         <a href="./privacy-policy">
           <button className="about">Our privacy policy</button>
